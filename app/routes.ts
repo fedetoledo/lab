@@ -34,5 +34,6 @@ export default [
     ),
     route('card-parallax', 'routes/animation/card-parallax/card-parallax.tsx'),
     route('zoom-parallax', 'routes/animation/zoom-parallax/zoom-parallax.tsx'),
+    route('sticky-footer', 'routes/animation/sticky-footer/sticky-footer.tsx'),
   ]),
 ] satisfies RouteConfig;
