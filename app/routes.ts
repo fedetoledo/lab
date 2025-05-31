@@ -35,5 +35,9 @@ export default [
     route('card-parallax', 'routes/animation/card-parallax/card-parallax.tsx'),
     route('zoom-parallax', 'routes/animation/zoom-parallax/zoom-parallax.tsx'),
     route('sticky-footer', 'routes/animation/sticky-footer/sticky-footer.tsx'),
+    route(
+      'text-scroll-gradient',
+      'routes/animation/text-scroll-gradient/text-scroll-gradient.tsx'
+    ),
   ]),
 ] satisfies RouteConfig;
