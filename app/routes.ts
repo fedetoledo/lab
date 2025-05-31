@@ -12,6 +12,9 @@ export default [
   ...prefix('three-js-journey', [
     index('routes/three/three-js-journey.tsx'),
     route('shaders', 'routes/three/shaders/shaders.tsx'),
+    route('basic-scene', 'routes/three/basic/basic-scene.tsx'),
+    route('cameras', 'routes/three/cameras/cameras.tsx'),
+    route('text', 'routes/three/text/text.tsx'),
   ]),
 
   // Web Animation
