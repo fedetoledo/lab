@@ -27,5 +27,6 @@ export default [
       'parallax-bento',
       'routes/animation/parallax-bento/parallax-bento.tsx'
     ),
+    route('mask-cursor', 'routes/animation/mask-cursor/mask-cursor.tsx'),
   ]),
 ] satisfies RouteConfig;
