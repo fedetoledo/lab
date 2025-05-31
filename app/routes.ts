@@ -33,5 +33,6 @@ export default [
       'routes/animation/text-along-path/text-along-path.tsx'
     ),
     route('card-parallax', 'routes/animation/card-parallax/card-parallax.tsx'),
+    route('zoom-parallax', 'routes/animation/zoom-parallax/zoom-parallax.tsx'),
   ]),
 ] satisfies RouteConfig;
