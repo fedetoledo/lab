@@ -23,5 +23,9 @@ export default [
     route('text-rollup', 'routes/animation/text-rollup/text-rollup.tsx'),
     route('sticky-cursor', 'routes/animation/sticky-cursor/sticky-cursor.tsx'),
     route('perspective', 'routes/animation/perspective/perspective.tsx'),
+    route(
+      'parallax-bento',
+      'routes/animation/parallax-bento/parallax-bento.tsx'
+    ),
   ]),
 ] satisfies RouteConfig;
