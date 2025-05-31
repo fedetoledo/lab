@@ -1,5 +1,5 @@
 import { MotionValue, motion, useTransform } from 'motion/react';
-import pic1 from 'app/assets/images/neon.webp';
+import pic1 from '/images/neon.webp';
 
 interface Props {
   scrollYProgress: MotionValue<number>;
