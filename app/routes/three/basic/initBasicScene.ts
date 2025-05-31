@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 
-export function initThreeScene(container: HTMLDivElement): () => void {
+export function initBasicScene(container: HTMLDivElement): () => void {
   // Remove any existing canvas (safety net in case cleanup was skipped)
   const existingCanvas = container.querySelector('canvas');
   if (existingCanvas) {
