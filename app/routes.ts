@@ -15,6 +15,7 @@ export default [
     route('basic-scene', 'routes/three/basic/basic-scene.tsx'),
     route('cameras', 'routes/three/cameras/cameras.tsx'),
     route('text', 'routes/three/text/text.tsx'),
+    route('particles', 'routes/three/particles/particles.tsx'),
   ]),
 
   // Web Animation
