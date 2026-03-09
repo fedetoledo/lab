@@ -130,12 +130,7 @@ function NavSection({
 
 export function AppSidebar() {
   const location = useLocation();
-  const isIndex = location.pathname === "/";
-  const [open, setOpen] = useState(isIndex);
-
-  useEffect(() => {
-    setOpen(isIndex);
-  }, [location.pathname]);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
