@@ -17,7 +17,7 @@ export function initTextScene(container: HTMLDivElement): () => void {
     75,
     container.clientWidth / container.clientHeight,
     0.1,
-    1000
+    1000,
   );
   camera.position.set(0, 0, 5);
 
@@ -37,7 +37,7 @@ export function initTextScene(container: HTMLDivElement): () => void {
   let textMesh: THREE.Mesh;
   const fontLoader = new FontLoader();
   fontLoader.load('/fonts/helvetiker_regular.typeface.json', (font) => {
-    const textGeometry = new TextGeometry("Fede's Blog", {
+    const textGeometry = new TextGeometry("Fede's Lab", {
       font: font,
       size: 0.5,
       depth: 0.2,

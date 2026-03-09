@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { initCamerasScene } from './initCamerasScene';
+import { useEffect, useRef } from "react";
+import { initCamerasScene } from "./initCamerasScene";
 
 const Cameras = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -12,12 +12,6 @@ const Cameras = () => {
     return cleanup;
   }, []);
 
-  return (
-    <div ref={containerRef} className='w-screen h-screen relative'>
-      <h1 className='absolute top-0 left-0'>
-        Cameras - Perspective VS Orthographic
-      </h1>
-    </div>
-  );
+  return <div ref={containerRef} className="w-screen h-screen relative"></div>;
 };
 export default Cameras;

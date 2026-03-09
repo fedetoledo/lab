@@ -13,9 +13,9 @@ const Text = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className='w-screen h-screen relative'>
-      <h1 className='absolute top-0 left-0'>3D Text</h1>
-    </div>
+    <>
+      <div ref={containerRef} className='w-full h-full relative' />
+    </>
   );
 };
 export default Text;
