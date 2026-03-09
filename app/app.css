@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -6,15 +6,16 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-sans: "quicksand", serif;
+  --font-sans: "Poppins", sans-serif;
 }
 
 html,
 body {
-  @apply dark:bg-black;
-
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
+    background: radial-gradient(ellipse at top, #0a0a0a 0%, #000 50%),
+      radial-gradient(ellipse at bottom, #0d0d0d 0%, #000 60%);
+    background-color: #000;
   }
 }
 
