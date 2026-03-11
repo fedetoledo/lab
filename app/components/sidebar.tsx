@@ -22,12 +22,10 @@ const navigation = [
     icon: Box,
     url: "/three-js-journey",
     children: [
-      { title: "Basic Scene", url: "/three-js-journey/basic-scene" },
-      { title: "Cameras", url: "/three-js-journey/cameras" },
-      { title: "Text", url: "/three-js-journey/text" },
-      { title: "Shaders", url: "/three-js-journey/shaders" },
-      { title: "Particles", url: "/three-js-journey/particles" },
-      { title: "Grass", url: "/three-js-journey/grass" },
+{ title: "Particles", url: "/three-js-journey/particles" },
+      { title: "Grass Field", url: "/three-js-journey/grass" },
+      { title: "Shader Effects", url: "/three-js-journey/shader-effects" },
+      { title: "Shader Transitions", url: "/three-js-journey/shader-transitions" },
     ],
   },
   {
@@ -35,26 +33,16 @@ const navigation = [
     icon: Play,
     url: "/animation",
     children: [
-      { title: "Text Rollup", url: "/animation/text-rollup" },
-      { title: "Sticky Cursor", url: "/animation/sticky-cursor" },
+{ title: "Sticky Cursor", url: "/animation/sticky-cursor" },
       { title: "Perspective", url: "/animation/perspective" },
       { title: "Parallax Bento", url: "/animation/parallax-bento" },
       { title: "Mask Cursor", url: "/animation/mask-cursor" },
-      { title: "Text Along Path", url: "/animation/text-along-path" },
-      { title: "Card Parallax", url: "/animation/card-parallax" },
-      { title: "Zoom Parallax", url: "/animation/zoom-parallax" },
-      { title: "Sticky Footer", url: "/animation/sticky-footer" },
-      {
+{ title: "Zoom Parallax", url: "/animation/zoom-parallax" },
+{
         title: "Text Scroll Gradient",
         url: "/animation/text-scroll-gradient",
       },
     ],
-  },
-  {
-    title: "Design",
-    icon: Paintbrush,
-    url: "/design",
-    children: [],
   },
 ];
 
