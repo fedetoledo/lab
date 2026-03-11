@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import type { ExperimentMeta } from "~/lib/experiment-meta";
 import { ExperimentDescription } from "./experiment-description";
 
@@ -10,6 +10,13 @@ export function ExperimentLayout({
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+
+  // Set document title client-side to avoid duplicating the title in both
+  // experimentMeta and a route-level meta export. All experiments are client-only
+  // so SSR meta isn't needed.
+  useEffect(() => {
+    document.title = `Fede's Lab - ${meta.title}`;
+  }, [meta.title]);
 
   return (
     <>
@@ -39,7 +46,9 @@ export function ExperimentLayout({
                 {meta.title}
               </h2>
               {meta.subtitle && (
-                <p className="text-xs text-white/40 truncate">{meta.subtitle}</p>
+                <p className="text-xs text-white/40 truncate">
+                  {meta.subtitle}
+                </p>
               )}
             </div>
             <button
@@ -47,8 +56,18 @@ export function ExperimentLayout({
               className="shrink-0 p-1 rounded-lg hover:bg-white/10 transition-colors text-white/40 hover:text-white/70"
               aria-label="Close info panel"
             >
-              <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <svg
+                className="size-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
               </svg>
             </button>
           </div>
@@ -64,13 +83,25 @@ export function ExperimentLayout({
       <button
         onClick={() => setOpen(true)}
         className={`fixed z-50 bottom-5 right-5 h-11 rounded-full bg-white/[0.08] border border-white/[0.1] backdrop-blur-md flex items-center gap-2 px-4 text-white/50 hover:text-white/80 hover:bg-white/[0.14] hover:border-white/[0.16] transition-all duration-300 shadow-lg ${
-          open ? "scale-0 opacity-0 pointer-events-none" : "scale-100 opacity-100"
+          open
+            ? "scale-0 opacity-0 pointer-events-none"
+            : "scale-100 opacity-100"
         }`}
         aria-label="Show experiment info"
       >
         <span className="text-xs">Want to know more?</span>
-        <svg className="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+        <svg
+          className="size-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={1.5}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+          />
         </svg>
       </button>
     </>
