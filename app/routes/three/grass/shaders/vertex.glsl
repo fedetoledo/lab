@@ -3,8 +3,6 @@
 uniform float uTime;
 uniform float uWindStrength;
 uniform float uWindSpeed;
-uniform vec2 uMouse;
-
 varying vec2 vUv;
 varying vec3 vWorldPos;
 
@@ -28,14 +26,9 @@ void main() {
   float wave = sin(worldPos.x * 1.0 - uTime + noise);
   float wind = wave;
   
-  float d = distance(worldPos.xz, uMouse);
-  float influence = smoothstep(1.5, 0.0, d);
-
   vec3 displaced = position;
   displaced.x += wind * heightFactor * uWindStrength;
   displaced.z += wind * heightFactor * uWindStrength * 0.3;
-
-  displaced.y -= influence * 0.3;
 
 
   vec4 mvPosition = modelViewMatrix * instanceMatrix * vec4(displaced, 1.0);

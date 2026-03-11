@@ -14,23 +14,19 @@ type GLTFResult = GLTF & {
 
 export function GrassBlades({
   count,
-  radius,
+  size,
 }: {
   count: number;
-  radius: number;
+  size: number;
 }) {
   const { nodes } = useGLTF("/assets/grass-blade.glb") as unknown as GLTFResult;
   const meshRef = useRef<THREE.InstancedMesh>(null);
-  const groundPlane = useMemo(() => new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), []);
-  const raycaster = useMemo(() => new THREE.Raycaster(), []);
-  const mouseWorldPos = useMemo(() => new THREE.Vector3(), []);
 
   const uniforms = useMemo(
     () => ({
       uTime: { value: 0 },
       uWindStrength: { value: 0.15 },
       uWindSpeed: { value: 0.6 },
-      uMouse: { value: new THREE.Vector2(0, 0) },
     }),
     [],
   );
@@ -41,12 +37,10 @@ export function GrassBlades({
     const dummy = new THREE.Object3D();
 
     for (let i = 0; i < count; i++) {
-      const angle = Math.random() * Math.PI * 2;
-      const distance = Math.sqrt(Math.random()) * radius;
       dummy.position.set(
-        Math.cos(angle) * distance,
+        (Math.random() - 0.5) * size,
         0,
-        Math.sin(angle) * distance,
+        (Math.random() - 0.5) * size,
       );
       dummy.rotation.set(0, Math.random() * Math.PI * 2, 0);
       dummy.scale.setScalar(0.8 + Math.random() * 0.4);
@@ -55,14 +49,10 @@ export function GrassBlades({
     }
 
     meshRef.current.instanceMatrix.needsUpdate = true;
-  }, [count, radius]);
+  }, [count, size]);
 
-  useFrame(({ pointer, camera }, delta) => {
+  useFrame((_state, delta) => {
     uniforms.uTime.value += delta;
-    raycaster.setFromCamera(pointer, camera);
-    if (raycaster.ray.intersectPlane(groundPlane, mouseWorldPos)) {
-      uniforms.uMouse.value.set(mouseWorldPos.x, mouseWorldPos.z);
-    }
   });
 
   return (

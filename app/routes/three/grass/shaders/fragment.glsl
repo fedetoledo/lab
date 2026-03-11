@@ -1,8 +1,6 @@
 #include "./noise.glsl"
 
 uniform float uTime;
-uniform vec2 uMouse;
-
 varying vec2 vUv;
 varying vec3 vWorldPos;
 
@@ -24,11 +22,6 @@ void main() {
   cloud = smoothstep(0.9, 0.6, cloud); // soften edges
 
   vec3 finalColor = colorMix * mix(0.5, 1.0, cloud);
-
-  float d = distance(vWorldPos.xz, uMouse);
-  float influence = smoothstep(1.5, 0.0, d);
-  vec3 highlightColor = vec3(1.0, 0.8, 0.5);
-  finalColor = mix(finalColor, highlightColor, influence);
 
   gl_FragColor = vec4(finalColor, 1.0);
 
