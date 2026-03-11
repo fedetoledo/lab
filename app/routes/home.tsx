@@ -17,7 +17,15 @@ export default function Home() {
         <div className="absolute top-[30%] left-[-10%] h-[400px] w-[500px] rounded-full bg-violet-500/[0.03] blur-[100px]" />
         <div className="absolute bottom-[-10%] right-[-5%] h-[500px] w-[600px] rounded-full bg-amber-500/[0.03] blur-[100px]" />
       </div>
-      <h1 className="text-4xl">Fede&apos;s Lab</h1>
+      <div className="text-center max-w-2xl space-y-4">
+        <h1 className="text-4xl">Fede&apos;s Lab</h1>
+        <p className="text-base leading-relaxed text-muted-foreground">
+          A collection of web experiments exploring creative coding, 3D
+          graphics, and interaction design. Each experiment is a self-contained
+          playground where I dig into a technique, break it apart, and rebuild
+          it from scratch.
+        </p>
+      </div>
 
       <section className="w-full max-w-5xl">
         <h2 className="text-sm font-medium tracking-[0.2em] uppercase text-muted-foreground mb-8 text-center">

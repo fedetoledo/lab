@@ -19,65 +19,33 @@ export const highlights = [
     ),
   },
   {
-    title: "Particles",
-    url: "/three-js-journey/particles",
+    title: "Shader Effects",
+    url: "/three-js-journey/shader-effects",
     description:
-      "Interactive 3D particle system with dynamic animations and mouse-driven interactions built with Three.js.",
+      "A 2×2 grid of images with unique GLSL shader effects on hover — pixelation, distortion, RGB splitting, and wave displacement.",
     gradient: "from-violet-500/20 via-purple-900/10 to-transparent",
     accent: "group-hover:shadow-violet-500/20",
     icon: (
       <svg viewBox="0 0 48 48" className="size-8 text-violet-400/60">
-        <circle cx="24" cy="24" r="2" fill="currentColor" />
-        <circle cx="14" cy="16" r="1.5" fill="currentColor" opacity="0.7" />
-        <circle cx="34" cy="14" r="1" fill="currentColor" opacity="0.5" />
-        <circle cx="10" cy="30" r="1" fill="currentColor" opacity="0.4" />
-        <circle cx="36" cy="32" r="1.5" fill="currentColor" opacity="0.6" />
-        <circle cx="20" cy="36" r="1" fill="currentColor" opacity="0.5" />
-        <circle cx="30" cy="20" r="1.5" fill="currentColor" opacity="0.6" />
-        <circle cx="18" cy="24" r="1" fill="currentColor" opacity="0.3" />
-        <circle cx="38" cy="22" r="1" fill="currentColor" opacity="0.4" />
+        <rect x="8" y="8" width="14" height="14" rx="2" fill="none" stroke="currentColor" strokeWidth="2" />
+        <rect x="26" y="8" width="14" height="14" rx="2" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.7" />
+        <rect x="8" y="26" width="14" height="14" rx="2" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.5" />
+        <rect x="26" y="26" width="14" height="14" rx="2" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.3" />
       </svg>
     ),
   },
   {
-    title: "Zoom Parallax",
-    url: "/animation/zoom-parallax",
+    title: "Shader Transitions",
+    url: "/three-js-journey/shader-transitions",
     description:
-      "Images that scale and transform at different rates as you scroll, creating a cinematic depth effect.",
+      "A fullscreen image carousel with GPU-powered transitions — displacement, noise dissolve, morph, and glitch effects.",
     gradient: "from-amber-500/20 via-orange-900/10 to-transparent",
     accent: "group-hover:shadow-amber-500/20",
     icon: (
       <svg viewBox="0 0 48 48" className="size-8 text-amber-400/60">
-        <rect
-          x="8"
-          y="12"
-          width="32"
-          height="24"
-          rx="2"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-        <rect
-          x="14"
-          y="16"
-          width="20"
-          height="14"
-          rx="1"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          opacity="0.5"
-        />
-        <rect
-          x="20"
-          y="20"
-          width="8"
-          height="6"
-          rx="1"
-          fill="currentColor"
-          opacity="0.3"
-        />
+        <rect x="6" y="12" width="16" height="24" rx="2" fill="none" stroke="currentColor" strokeWidth="2" />
+        <rect x="26" y="12" width="16" height="24" rx="2" fill="none" stroke="currentColor" strokeWidth="2" opacity="0.5" />
+        <path d="M22 24l4-3v6z" fill="currentColor" opacity="0.6" />
       </svg>
     ),
   },
