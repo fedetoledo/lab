@@ -35,8 +35,8 @@ export const highlights = [
     ),
   },
   {
-    title: "Shader Transitions",
-    url: "/three-js-journey/shader-transitions",
+    title: "Shader Carousel",
+    url: "/three-js-journey/shader-carousel",
     description:
       "A fullscreen image carousel with GPU-powered transitions — displacement, noise dissolve, morph, and glitch effects.",
     gradient: "from-amber-500/20 via-orange-900/10 to-transparent",

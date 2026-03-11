@@ -25,7 +25,7 @@ const navigation = [
 { title: "Particles", url: "/three-js-journey/particles" },
       { title: "Grass Field", url: "/three-js-journey/grass" },
       { title: "Shader Effects", url: "/three-js-journey/shader-effects" },
-      { title: "Shader Transitions", url: "/three-js-journey/shader-transitions" },
+      { title: "Shader Carousel", url: "/three-js-journey/shader-carousel" },
     ],
   },
   {

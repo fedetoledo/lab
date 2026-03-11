@@ -15,10 +15,10 @@ route("particles", "routes/three/particles/particles.tsx"),
     route("grass", "routes/three/grass/grass.tsx"),
     route(
       "shader-effects",
-      "routes/three/shader-transitions/shader-transitions.tsx",
+      "routes/three/shader-effects/shader-effects.tsx",
     ),
     route(
-      "shader-transitions",
+      "shader-carousel",
       "routes/three/shader-carousel/shader-carousel.tsx",
     ),
   ]),
