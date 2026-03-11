@@ -1,5 +1,5 @@
 import { useRef, useState, useMemo } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { useTexture } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -19,17 +19,16 @@ const fragmentShaders: Record<string, string> = {
 interface ShaderImageProps {
   imagePath: string;
   effect: string;
-  position: [number, number, number];
-  size: [number, number];
+  label: string;
 }
 
-export function ShaderImage({
+function ShaderPlane({
   imagePath,
   effect,
-  position,
-  size,
-}: ShaderImageProps) {
-  const meshRef = useRef<THREE.Mesh>(null);
+}: {
+  imagePath: string;
+  effect: string;
+}) {
   const materialRef = useRef<THREE.ShaderMaterial>(null);
   const [hovered, setHovered] = useState(false);
   const progressRef = useRef(0);
@@ -73,13 +72,11 @@ export function ShaderImage({
 
   return (
     <mesh
-      ref={meshRef}
-      position={position}
       onPointerEnter={() => setHovered(true)}
       onPointerLeave={() => setHovered(false)}
       onPointerMove={handlePointerMove}
     >
-      <planeGeometry args={[size[0], size[1]]} />
+      <planeGeometry args={[viewport.width, viewport.height]} />
       <shaderMaterial
         ref={materialRef}
         vertexShader={vertexShader}
@@ -87,5 +84,20 @@ export function ShaderImage({
         uniforms={uniforms}
       />
     </mesh>
+  );
+}
+
+export function ShaderImage({ imagePath, effect, label }: ShaderImageProps) {
+  return (
+    <div className="relative overflow-hidden rounded-2xl border border-white/[0.08]">
+      <Canvas orthographic camera={{ zoom: 1, position: [0, 0, 1] }}>
+        <ShaderPlane imagePath={imagePath} effect={effect} />
+      </Canvas>
+      <div className="absolute bottom-0 left-0 p-4 pointer-events-none">
+        <span className="text-xs font-medium tracking-wider uppercase text-white/50">
+          {label}
+        </span>
+      </div>
+    </div>
   );
 }

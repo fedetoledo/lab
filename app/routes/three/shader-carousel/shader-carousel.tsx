@@ -24,11 +24,11 @@ const experimentMeta: ExperimentMeta = {
 
 // Placeholder images — replace with real ones
 const images = [
-  "/images/verstappen.webp",
-  "/images/colapinto.webp",
-  "/images/leclerc.webp",
-  "/images/bortoleto.webp",
-  "/images/bottas.webp",
+  "/images/buenos-aires.webp",
+  "/images/london.webp",
+  "/images/madrid.webp",
+  "/images/new-york.webp",
+  "/images/paris.webp",
 ];
 
 export default function ShaderCarousel() {

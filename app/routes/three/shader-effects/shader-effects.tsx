@@ -1,5 +1,3 @@
-import { Canvas } from "@react-three/fiber";
-import { useThree } from "@react-three/fiber";
 import { ExperimentLayout } from "~/components/experiment-layout";
 import type { ExperimentMeta } from "~/lib/experiment-meta";
 import { ShaderImage } from "./shader-image";
@@ -22,59 +20,29 @@ const experimentMeta: ExperimentMeta = {
   ],
 };
 
-const gap = 0.08;
-
 const effects = [
   { image: "/images/ferrari.webp", effect: "pixelate", label: "Pixelate" },
-  { image: "/images/redbull.webp", effect: "distortion", label: "Distortion" },
-  { image: "/images/alpine.webp", effect: "rgb-shift", label: "RGB Shift" },
-  { image: "/images/audi.webp", effect: "wave", label: "Wave" },
+  {
+    image: "/images/redbull.webp",
+    effect: "distortion",
+    label: "Distortion",
+  },
+  { image: "/images/audi.webp", effect: "rgb-shift", label: "RGB Shift" },
+  { image: "/images/alpine.webp", effect: "wave", label: "Wave" },
 ];
-
-function Scene() {
-  const { viewport } = useThree();
-
-  const cellW = (viewport.width - gap) / 2;
-  const cellH = (viewport.height - gap) / 2;
-
-  const positions: [number, number, number][] = [
-    [-(cellW + gap) / 2, (cellH + gap) / 2, 0],
-    [(cellW + gap) / 2, (cellH + gap) / 2, 0],
-    [-(cellW + gap) / 2, -(cellH + gap) / 2, 0],
-    [(cellW + gap) / 2, -(cellH + gap) / 2, 0],
-  ];
-
-  return (
-    <>
-      {effects.map((item, i) => (
-        <ShaderImage
-          key={item.effect}
-          imagePath={item.image}
-          effect={item.effect}
-          position={positions[i]}
-          size={[cellW, cellH]}
-        />
-      ))}
-    </>
-  );
-}
 
 export default function ShaderEffects() {
   return (
     <ExperimentLayout meta={experimentMeta}>
-      <div className="w-screen h-screen bg-black relative">
-        <Canvas orthographic camera={{ zoom: 1, position: [0, 0, 1] }}>
-          <Scene />
-        </Canvas>
-
-        {/* Labels */}
-        <div className="absolute inset-0 pointer-events-none grid grid-cols-2 grid-rows-2">
+      <div className="w-screen h-screen bg-black p-6 flex items-center justify-center">
+        <div className="grid grid-cols-2 grid-rows-2 gap-3 w-full h-full max-w-[1400px]">
           {effects.map((item) => (
-            <div key={item.effect} className="flex items-end justify-start p-5">
-              <span className="text-xs font-medium tracking-wider uppercase text-white/50">
-                {item.label}
-              </span>
-            </div>
+            <ShaderImage
+              key={item.effect}
+              imagePath={item.image}
+              effect={item.effect}
+              label={item.label}
+            />
           ))}
         </div>
       </div>
