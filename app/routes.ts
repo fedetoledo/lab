@@ -38,5 +38,9 @@ route(
       "text-scroll-gradient",
       "routes/animation/text-scroll-gradient/text-scroll-gradient.tsx",
     ),
+    route(
+      "spain-trails",
+      "routes/animation/spain-trails/spain-trails.tsx",
+    ),
   ]),
 ] satisfies RouteConfig;
