@@ -5,9 +5,9 @@ import { SpainMap } from "./spain-map";
 
 const experimentMeta: ExperimentMeta = {
   title: "Spain Trails",
-  subtitle: "Interactive Map with City Connections",
+  subtitle: "Interactive Map with Animated Trails",
   description:
-    "An interactive visualization of Spain's map drawn with points, featuring animated trails connecting major Spanish cities. The map is rendered programmatically and trails are drawn between city locations to create a network of connections.",
+    "An interactive visualization of Spain's map drawn with points, featuring animated trails connecting random points across the map. The map is rendered programmatically and trails are drawn between randomly generated locations to create a dynamic network of connections.",
   techStack: ["React Three Fiber", "Three.js", "Canvas API"],
   keyLearnings: [],
 };

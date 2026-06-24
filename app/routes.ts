@@ -21,6 +21,10 @@ route("particles", "routes/three/particles/particles.tsx"),
       "shader-carousel",
       "routes/three/shader-carousel/shader-carousel.tsx",
     ),
+    route(
+      "grass-patches",
+      "routes/three/grass-patches/grass-patches.tsx",
+    ),
   ]),
 
   // Web Animation
